@@ -12,10 +12,10 @@ To make the workflow function properly, you need to add the following secrets to
 
 | Secret Name | Description |
 |-------------|-------------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL (e.g., `https://abcdefg.supabase.co`) |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase anonymous/public key |
-| `SUPABASE_ACCESS_TOKEN` | Your Supabase access token (used for CLI operations) |
-| `SUPABASE_PROJECT_REF` | Your Supabase project reference ID |
+| `NEXT_PUBLIC_SUPABASE_URL` | https://lsrsobabbkietyplwbny.supabase.co |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxzcnNvYmFiYmtpZXR5cGx3Ym55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk1MDU2NDAsImV4cCI6MjA2NTA4MTY0MH0.l6PeOk-H30U9X6nh7IR35O4tfhAPSBMvCdZC27jP1SI |
+| `SUPABASE_ACCESS_TOKEN` | 6G7EqMStGYJWaRis+Ntm1hGtl+SoPNtCqeGjNa2jcF39Funy3fgpb4bDlWbpxyS4XX8amaBPn2RJV++dUNX/Tg== |
+| `SUPABASE_PROJECT_REF` | lsrsobabbkietyplwbny |
 
 ## How to Get These Values
 
