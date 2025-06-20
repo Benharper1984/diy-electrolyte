@@ -43,16 +43,16 @@ jobs:
       - name: Seed Database
         run: |
           # Extract Supabase Project Reference
-          PROJECT_REF="${{ secrets.SUPABASE_PROJECT_REF }}"
+          PROJECT_REF="${{ secrets.SUPABASE }}"
           
           # Login to Supabase
-          supabase login --token ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          supabase login --token ${{ secrets.SUPABASE }}
           
           # Run the seed ingredients SQL script
           echo "Running seed ingredients script..."
           supabase db query --project-ref $PROJECT_REF < sql/seed_ingredients.sql
         env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE }}
 
   regenerate_types:
     needs: seed_database
@@ -74,11 +74,11 @@ jobs:
       - name: Generate Supabase types
         run: |
           # Login to Supabase
-          supabase login --token ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          supabase login --token ${{ secrets.SUPABASE }}
           
           # Generate types
           echo "Generating Supabase types..."
-          supabase gen types typescript --project-id ${{ secrets.SUPABASE_PROJECT_REF }} > src/types/supabase.ts
+          supabase gen types typescript --project-id ${{ secrets.SUPABASE }} > src/types/supabase.ts
           
           # Check if types were updated
           if git diff --quiet src/types/supabase.ts; then
@@ -87,7 +87,7 @@ jobs:
             echo "Supabase types updated."
           fi
         env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE }}
       
       - name: Commit and push updated types
         uses: stefanzweifel/git-auto-commit-action@v4
